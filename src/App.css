@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@500;700&display=swap");
 
 :root {
   --light-blue: #31c3bd;
@@ -17,6 +17,90 @@
   padding: 0;
 }
 
+body {
+  background-color: var(--dark-navy);
+}
+
 .App {
   text-align: center;
+  width: 375px;
+  height: 667px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.logo {
+  height: 32px;
+}
+
+.mark-choice {
+  background-color: var(--semi-dark-navy);
+  height: 205px;
+  width: 327px;
+  margin: 32px auto;
+  border-radius: 15px;
+  color: var(--silver);
+  box-shadow: inset 0px -8px 0px #10212a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.mark-choice h1 {
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 20.16px;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.mark-choice form {
+  width: 279px;
+  height: 72px;
+  background-color: var(--dark-navy);
+  border-radius: 10px;
+}
+
+.mark-choice p {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0.88px;
+  color: var(--silver);
+  opacity: 0.5;
+}
+
+.buttons {
+  width: 327px;
+  height: 128px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.buttons button {
+  width: 100%;
+  height: 56px;
+  border-radius: 15px;
+  border: none;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20.16px;
+  letter-spacing: 1px;
+  color: var(--dark-navy);
+  cursor: pointer;
+}
+
+.buttons button:first-child {
+  background-color: var(--light-yellow);
+  box-shadow: inset 0px -8px 0px #cc8b13;
+}
+
+.buttons button:last-child {
+  background-color: var(--light-blue);
+  box-shadow: inset 0px -8px 0px #118c87;
 }
