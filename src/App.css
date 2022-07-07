@@ -137,3 +137,96 @@ form label {
   width: 32px;
   background-color: var(--navy);
 }
+
+.game-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.game-header__logo {
+  height: 32px;
+}
+
+.game-header__turn {
+  color: var(--silver);
+  text-transform: uppercase;
+  width: 96px;
+  height: 40px;
+  border-radius: 5px;
+  background-color: var(--navy-hover);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.restart {
+  width: 40px;
+  height: 40px;
+  background-color: var(--silver);
+  border-radius: 5px;
+  background-image: url("./assets/icon-restart.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+}
+
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 64px;
+}
+
+.game-grid__cell {
+  width: 96px;
+  height: 96px;
+  background-color: var(--navy-hover);
+  border-radius: 5px;
+  margin: auto;
+}
+
+.game-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.game-footer__cell {
+  width: 96px;
+  height: 64px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  color: var(--navy);
+  font-weight: 700;
+}
+
+.p1 {
+  background-color: var(--blue);
+}
+
+.ties {
+  background-color: var(--silver);
+}
+
+.p2 {
+  background-color: var(--yellow);
+}
+
+.p-result {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 15.12px;
+  letter-spacing: 0.75px;
+}
+
+.p-result__value {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 25.2px;
+  letter-spacing: 1.25px;
+}
