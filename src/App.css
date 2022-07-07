@@ -1,12 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@500;700&display=swap");
 
 :root {
-  --light-blue: #31c3bd;
-  --light-blue-hover: #65e9e4;
-  --light-yellow: #f2b137;
-  --light-yellow-hover: #ffc860;
-  --dark-navy: #1a2a33;
-  --semi-dark-navy: #1f3641;
+  --blue: #31c3bd;
+  --blue-hover: #65e9e4;
+  --yellow: #f2b137;
+  --yellow-hover: #ffc860;
+  --navy: #1a2a33;
+  --navy-hover: #1f3641;
   --silver: #a8bfc9;
   --silver-hover: #dbe8ed;
 }
@@ -18,7 +18,7 @@
 }
 
 body {
-  background-color: var(--dark-navy);
+  background-color: var(--navy);
 }
 
 .App {
@@ -36,12 +36,12 @@ body {
 }
 
 .mark-choice {
-  background-color: var(--semi-dark-navy);
+  background-color: var(--navy-hover);
   height: 205px;
   width: 327px;
   margin: 32px auto;
   border-radius: 15px;
-  color: var(--silver);
+  color: var(--silver-hover);
   box-shadow: inset 0px -8px 0px #10212a;
   display: flex;
   flex-direction: column;
@@ -60,8 +60,30 @@ body {
 .mark-choice form {
   width: 279px;
   height: 72px;
-  background-color: var(--dark-navy);
+  background-color: var(--navy);
   border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.mark-choice form div {
+  width: 132px;
+  height: 54px;
+  background-color: var(--silver);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mark-choice form input {
+  appearance: none;
+}
+
+.mark-choice form label {
+  width: 132px;
+  height: 54px;
 }
 
 .mark-choice p {
@@ -91,16 +113,27 @@ body {
   font-size: 16px;
   line-height: 20.16px;
   letter-spacing: 1px;
-  color: var(--dark-navy);
+  color: var(--navy);
   cursor: pointer;
 }
 
 .buttons button:first-child {
-  background-color: var(--light-yellow);
+  background-color: var(--yellow);
   box-shadow: inset 0px -8px 0px #cc8b13;
 }
 
 .buttons button:last-child {
-  background-color: var(--light-blue);
+  background-color: var(--blue);
   box-shadow: inset 0px -8px 0px #118c87;
+}
+
+form label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.outline {
+  width: 32px;
+  background-color: var(--navy);
 }
