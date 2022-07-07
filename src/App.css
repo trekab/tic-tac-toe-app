@@ -146,6 +146,7 @@ form label {
 
 .game-header__logo {
   height: 32px;
+  margin: 8px;
 }
 
 .game-header__turn {
@@ -158,6 +159,7 @@ form label {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-right: 30px;
 }
 
 .restart {
@@ -169,6 +171,7 @@ form label {
   background-repeat: no-repeat;
   background-position: center;
   cursor: pointer;
+  margin: 8px;
 }
 
 .game-grid {
@@ -203,6 +206,7 @@ form label {
   text-transform: uppercase;
   color: var(--navy);
   font-weight: 700;
+  margin: 8px;
 }
 
 .p1 {
