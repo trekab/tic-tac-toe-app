@@ -163,13 +163,20 @@ form label {
   background-color: var(--navy-hover);
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   margin-right: 30px;
   font-weight: 700;
   font-size: 14px;
   line-height: 17.64px;
   letter-spacing: 0.88px;
   box-shadow: inset 0px -4px 0px #10212a;
+}
+
+.turn-icon {
+  background-image: url('./assets/icon-x-turn.svg');
+  width: 16px;
+  height: 16px;
+  margin-bottom: 2px;
 }
 
 .restart {
