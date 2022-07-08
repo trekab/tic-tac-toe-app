@@ -3,7 +3,7 @@ import logo from "../assets/logo.svg";
 
 const Game = () => {
   return (
-    <div>
+    <div className="game">
       <header className="game-header">
         <img src={logo} alt="logo" className="game-header__logo" />
         <div className="game-header__turn">X turn</div>

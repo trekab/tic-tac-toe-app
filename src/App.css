@@ -22,13 +22,13 @@ body {
 }
 
 .App {
-  text-align: center;
+  /* text-align: center;
   width: 375px;
-  height: 667px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  height: 667px; */
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
 }
 
 .logo {
@@ -138,6 +138,11 @@ form label {
   background-color: var(--navy);
 }
 
+.game {
+  width: 328px;
+  height: 516px;
+}
+
 .game-header {
   display: flex;
   justify-content: space-between;
@@ -146,7 +151,6 @@ form label {
 
 .game-header__logo {
   height: 32px;
-  margin: 8px;
 }
 
 .game-header__turn {
@@ -160,6 +164,11 @@ form label {
   align-items: center;
   justify-content: center;
   margin-right: 30px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17.64px;
+  letter-spacing: 0.88px;
+  box-shadow: inset 0px -4px 0px #10212a;
 }
 
 .restart {
@@ -170,8 +179,9 @@ form label {
   background-image: url("./assets/icon-restart.svg");
   background-repeat: no-repeat;
   background-position: center;
+  background-size: 15.38px 15.38px;
   cursor: pointer;
-  margin: 8px;
+  box-shadow: inset 0px -4px 0px var(--silver);
 }
 
 .game-grid {
@@ -185,8 +195,9 @@ form label {
   width: 96px;
   height: 96px;
   background-color: var(--navy-hover);
-  border-radius: 5px;
+  border-radius: 10px;
   margin: auto;
+  box-shadow: inset 0px -8px 0px #10212a;
 }
 
 .game-footer {
@@ -206,7 +217,6 @@ form label {
   text-transform: uppercase;
   color: var(--navy);
   font-weight: 700;
-  margin: 8px;
 }
 
 .p1 {
