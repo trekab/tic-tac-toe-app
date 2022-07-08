@@ -5,7 +5,7 @@ import outlineX from "../assets/icon-x-outline.svg";
 
 const NewGame = () => {
   return (
-    <>
+    <div className="new-game">
       <img src={logo} alt="logo" className="logo" />
       <div className="mark-choice">
         <h1>PICK PLAYER 1'S MARK</h1>
@@ -29,7 +29,7 @@ const NewGame = () => {
         <button>NEW GAME (VS CPU)</button>
         <button>NEW GAME (VS PLAYER)</button>
       </div>
-    </>
+    </div>
   );
 };
 
