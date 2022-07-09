@@ -10,11 +10,11 @@ const Game = () => {
           <div className="turn-icon"></div>
           <p>turn</p>
         </div>
-        <div className="restart"></div>
+        <button className="restart"></button>
       </header>
       <main className="game-grid">
-        <div className="game-grid__cell"></div>
-        <div className="game-grid__cell"></div>
+        <div className="game-grid__cell x-mark"></div>
+        <div className="game-grid__cell o-mark"></div>
         <div className="game-grid__cell"></div>
         <div className="game-grid__cell"></div>
         <div className="game-grid__cell"></div>

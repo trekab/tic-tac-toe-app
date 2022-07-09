@@ -190,6 +190,11 @@ form label {
   background-size: 15.38px 15.38px;
   cursor: pointer;
   box-shadow: inset 0px -4px 0px #7a898f;
+  border: none;
+}
+
+.restart:hover {
+  background-color: var(--silver-hover);
 }
 
 .game-grid {
@@ -206,6 +211,30 @@ form label {
   border-radius: 10px;
   margin: auto;
   box-shadow: inset 0px -8px 0px #10212a;
+  cursor: pointer;
+}
+
+.x-mark {
+  background-image: url("./assets/icon-x.svg");
+}
+
+.x-mark,
+.o-mark {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 40px 40px;
+}
+
+.x-mark:hover {
+  background-image: url("./assets/icon-x-outline.svg");
+}
+
+.o-mark {
+  background-image: url("./assets/icon-o.svg");
+}
+
+.o-mark:hover {
+  background-image: url("./assets/icon-o-outline.svg");
 }
 
 .game-footer {
