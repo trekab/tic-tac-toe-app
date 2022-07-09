@@ -1,5 +1,6 @@
 import "./App.css";
 import Game from "./components/Game";
+import Modal from "./components/Modal";
 import NewGame from "./components/NewGame";
 
 const App = () => {
@@ -7,6 +8,7 @@ const App = () => {
     <div className="App">
       {/* <NewGame /> */}
       <Game />
+      <Modal />
     </div>
   );
 };
