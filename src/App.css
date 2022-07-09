@@ -173,7 +173,7 @@ form label {
 }
 
 .turn-icon {
-  background-image: url('./assets/icon-x-turn.svg');
+  background-image: url("./assets/icon-x-turn.svg");
   width: 16px;
   height: 16px;
   margin-bottom: 2px;
@@ -189,7 +189,7 @@ form label {
   background-position: center;
   background-size: 15.38px 15.38px;
   cursor: pointer;
-  box-shadow: inset 0px -4px 0px var(--silver);
+  box-shadow: inset 0px -4px 0px #7a898f;
 }
 
 .game-grid {
@@ -252,5 +252,3 @@ form label {
   line-height: 25.2px;
   letter-spacing: 1.25px;
 }
-
-
