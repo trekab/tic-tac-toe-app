@@ -302,6 +302,10 @@ form label {
   align-items: center;
 }
 
+.modal-info {
+  text-align: center;
+}
+
 .modal-p {
   font-weight: 700;
   text-transform: uppercase;
@@ -309,6 +313,17 @@ form label {
   font-size: 14px;
   line-height: 17.64px;
   letter-spacing: 0.88px;
+}
+
+.round-tie {
+  font-weight: 700;
+  color: var(--silver);
+  text-transform: uppercase;
+  font-size: 24px;
+  line-height: 30.24px;
+  margin-top: -8px;
+  margin-bottom: 24px;
+  letter-spacing: 1.5px;
 }
 
 .modal-msg {
@@ -352,4 +367,12 @@ form label {
   background-color: var(--yellow);
   color: var(--navy);
   box-shadow: inset 0px -4px 0px #af8027;
+}
+
+.x-color {
+  color: var(--blue);
+}
+
+.o-color {
+  color: var(--yellow);
 }
