@@ -17,7 +17,7 @@ const NewGame = () => {
             <label htmlFor="o"></label>
           </div>
         </form>
-        <p>REMEMBER : X GOES FIRST</p>
+        <p id="reminder">REMEMBER : X GOES FIRST</p>
       </div>
       <div className="buttons">
         <button>NEW GAME (VS CPU)</button>

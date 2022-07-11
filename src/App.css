@@ -82,7 +82,8 @@ body {
   background-color: rgba(168, 191, 201, 0.05);
 }
 
-#o-mark__section, #x-mark__section {
+#o-mark__section,
+#x-mark__section {
   border-radius: 15px;
 }
 
@@ -118,9 +119,7 @@ body {
   border: 3px solid black;
 }
 
-#o-mark__section
-
-.mark-choice p {
+#reminder {
   font-weight: 500;
   font-size: 14px;
   line-height: 18px;
@@ -156,7 +155,7 @@ body {
   box-shadow: inset 0px -8px 0px #cc8b13;
 }
 
-.buttons button:first-child:hover{
+.buttons button:first-child:hover {
   background-color: var(--yellow-hover);
 }
 
@@ -165,7 +164,7 @@ body {
   box-shadow: inset 0px -8px 0px #118c87;
 }
 
-.buttons button:last-child:hover{
+.buttons button:last-child:hover {
   background-color: var(--blue-hover);
 }
 
