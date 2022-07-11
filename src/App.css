@@ -156,9 +156,17 @@ body {
   box-shadow: inset 0px -8px 0px #cc8b13;
 }
 
+.buttons button:first-child:hover{
+  background-color: var(--yellow-hover);
+}
+
 .buttons button:last-child {
   background-color: var(--blue);
   box-shadow: inset 0px -8px 0px #118c87;
+}
+
+.buttons button:last-child:hover{
+  background-color: var(--blue-hover);
 }
 
 form label {
