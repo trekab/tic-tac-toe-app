@@ -1,7 +1,5 @@
 import React from "react";
 import logo from "../assets/logo.svg";
-import outlineO from "../assets/icon-o-outline.svg";
-import outlineX from "../assets/icon-x-outline.svg";
 
 const NewGame = () => {
   return (
@@ -10,17 +8,13 @@ const NewGame = () => {
       <div className="mark-choice">
         <h1>PICK PLAYER 1'S MARK</h1>
         <form>
-          <div>
+          <div id="x-mark__section">
             <input type="radio" id="x" name="mark" value="x" />
-            <label htmlFor="x">
-              <img src={outlineX} alt="x" className="outline" />
-            </label>
+            <label htmlFor="x"></label>
           </div>
-          <div>
+          <div id="o-mark__section">
             <input type="radio" id="o" name="mark" value="o" />
-            <label htmlFor="o">
-              <img src={outlineO} alt="o" className="outline" />
-            </label>
+            <label htmlFor="o"></label>
           </div>
         </form>
         <p>REMEMBER : X GOES FIRST</p>

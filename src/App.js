@@ -13,9 +13,9 @@ const App = () => {
 
   return (
     <div className="App">
-      {/* <NewGame /> */}
-      <Game />
-      <Modal winner="player 1" mark="x" msg={messages[1]} />
+      <NewGame />
+      {/* <Game /> */}
+      {/* <Modal winner="player 1" mark="x" msg={messages[1]} /> */}
     </div>
   );
 };

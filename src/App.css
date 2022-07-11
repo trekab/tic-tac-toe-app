@@ -65,27 +65,60 @@ body {
   border-radius: 10px;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 .mark-choice form div {
   width: 132px;
   height: 54px;
-  background-color: var(--silver);
-  border-radius: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+  border: 8px solid var(--navy);
+}
+
+.mark-choice form div:hover {
+  background-color: rgba(168, 191, 201, 0.05);
+}
+
+#o-mark__section, #x-mark__section {
+  border-radius: 15px;
+}
+
+#x-mark__section label {
+  width: 32px;
+  height: 32px;
+  background-image: url("./assets/icon-x-turn.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 32px 32px;
+  cursor: pointer;
+}
+
+#o-mark__section {
+  background-color: var(--silver);
+}
+
+#o-mark__section label {
+  width: 32px;
+  height: 32px;
+  background-image: url("./assets/icon-o-turn.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 32px 32px;
+  cursor: pointer;
 }
 
 .mark-choice form input {
   appearance: none;
 }
 
-.mark-choice form label {
-  width: 132px;
-  height: 54px;
+.mark-choice form input:checked + label {
+  border: 3px solid black;
 }
+
+#o-mark__section
 
 .mark-choice p {
   font-weight: 500;
