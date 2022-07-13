@@ -424,7 +424,7 @@ form label {
     width: 460px;
   }
 
-  .mark-choice h1{
+  .mark-choice h1 {
     font-size: 16px;
   }
 
@@ -434,5 +434,57 @@ form label {
 
   .mark-choice form div {
     width: 198px;
+  }
+
+  .game {
+    width: 460px;
+    height: 623px;
+  }
+
+  .game-header__turn {
+    width: 140px;
+    height: 52px;
+    font-size: 16px;
+    line-height: 20.16px;
+    letter-spacing: 1px;
+  }
+  
+  .turn-icon {
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+  }
+
+  .restart {
+    width: 52px;
+    height: 52px;
+  }
+
+  .game-grid__cell {
+    width: 140px;
+    height: 140px;
+  }
+
+  .x-mark,
+  .o-mark {
+    background-size: 63.46px 63.46px;
+  }
+
+  .game-footer__cell {
+    width: 140px;
+    height: 72px;
+  }
+
+  .p-result {
+    font-size: 14px;
+    line-height: 17.64px;
+    letter-spacing: 0.88px;
+  }
+
+  .p-result__value {
+    font-size: 24px;
+    line-height: 30.24px;
+    letter-spacing: 1.5px;
   }
 }

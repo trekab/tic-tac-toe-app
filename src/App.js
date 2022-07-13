@@ -13,8 +13,8 @@ const App = () => {
 
   return (
     <div className="App">
-      <NewGame />
-      {/* <Game /> */}
+      {/* <NewGame /> */}
+      <Game />
       {/* <Modal winner="tie" mark="x" msg={messages[1]} restart={false} /> */}
     </div>
   );
