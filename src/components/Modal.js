@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import iconO from "../assets/icon-o.svg";
 import iconX from "../assets/icon-x.svg";
 
-const Modal = ({ winner, mark, msg }) => {
+const Modal = ({ winner, mark, msg, restart }) => {
   const [winnerMark, setWinnerMark] = useState("");
   useEffect(() => {
     if (mark === "o") {
@@ -15,13 +15,13 @@ const Modal = ({ winner, mark, msg }) => {
     <>
       <div className="overlay"></div>
       <div className="modal">
-        {winner === "tie" ? (
+        {restart ? (
+          <p className="round-tie">restart game?</p>
+        ) : winner === "tie" && !restart ? (
           <p className="round-tie">round tied</p>
         ) : (
           <div className="modal-info">
-            <p className="modal-p">
-              {`${msg}`}
-            </p>
+            <p className="modal-p">{`${msg}`}</p>
             <h1 className="modal-msg">
               <img src={winnerMark} alt="winners mark" className="p-icon" />
               <span className={mark === "o" ? "o-color" : "x-color"}>
@@ -32,8 +32,8 @@ const Modal = ({ winner, mark, msg }) => {
         )}
 
         <div className="modal-buttons">
-          <button className="cancel">Quit</button>
-          <button className="approve">Next Round</button>
+          <button className="cancel">{restart ? "No, cancel" : "Quit"}</button>
+          <button className="approve">{restart ? "Yes, restart" : "Next Round"}</button>
         </div>
       </div>
     </>
