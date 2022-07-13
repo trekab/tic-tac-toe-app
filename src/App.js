@@ -15,7 +15,7 @@ const App = () => {
     <div className="App">
       {/* <NewGame /> */}
       <Game />
-      {/* <Modal winner="tie" mark="x" msg={messages[1]} restart={false} /> */}
+      <Modal winner="player 1" mark="o" msg={messages[1]} restart={false} />
     </div>
   );
 };
