@@ -33,7 +33,9 @@ const Modal = ({ winner, mark, msg, restart }) => {
 
         <div className="modal-buttons">
           <button className="cancel">{restart ? "No, cancel" : "Quit"}</button>
-          <button className="approve">{restart ? "Yes, restart" : "Next Round"}</button>
+          <button className="approve">
+            {restart ? "Yes, restart" : "Next Round"}
+          </button>
         </div>
       </div>
     </>

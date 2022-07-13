@@ -417,3 +417,22 @@ form label {
 .o-color {
   color: var(--yellow);
 }
+
+@media (min-width: 576px) {
+  .mark-choice,
+  .buttons {
+    width: 460px;
+  }
+
+  .mark-choice h1{
+    font-size: 16px;
+  }
+
+  .mark-choice form {
+    width: 412px;
+  }
+
+  .mark-choice form div {
+    width: 198px;
+  }
+}
