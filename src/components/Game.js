@@ -2,8 +2,9 @@ import React from "react";
 import logo from "../assets/logo.svg";
 import xturn from "../assets/icon-x-turn.svg";
 import oturn from "../assets/icon-o-turn-alt.svg";
+import GameCell from "./GameCell";
 
-const Game = ({ turn }) => {
+const Game = ({ turn, updatePlayerTurn, gameOutcome, clickHandler }) => {
   return (
     <div className="game">
       <header className="game-header">
@@ -17,15 +18,16 @@ const Game = ({ turn }) => {
         <button className="restart"></button>
       </header>
       <main className="game-grid">
-        <div className="game-grid__cell x-mark"></div>
-        <div className="game-grid__cell o-mark"></div>
-        <div className="game-grid__cell"></div>
-        <div className="game-grid__cell"></div>
-        <div className="game-grid__cell"></div>
-        <div className="game-grid__cell"></div>
-        <div className="game-grid__cell"></div>
-        <div className="game-grid__cell"></div>
-        <div className="game-grid__cell"></div>
+        {Object.keys(gameOutcome).map((result) => (
+          <GameCell
+            className={gameOutcome[result]}
+            key={result}
+            clickHandler={clickHandler}
+            cell={result}
+            turn={turn}
+            updatePlayerTurn={updatePlayerTurn}
+          />
+        ))}
       </main>
       <footer className="game-footer">
         <div className="game-footer__cell p1">

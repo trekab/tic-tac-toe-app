@@ -12,22 +12,43 @@ const App = () => {
     "you won!",
   ];
 
+  const results = {
+    cell1: "",
+    cell2: "",
+    cell3: "",
+    cell4: "",
+    cell5: "",
+    cell6: "",
+    cell7: "",
+    cell8: "",
+    cell9: "",
+  };
+
   const [turn, setTurn] = useState("x");
+  const [gameOutcome, setGameOutcome] = useState(results);
 
   const updatePlayerTurn = () => {
-    setTurn(() => {
-      if (turn === "x") {
-        setTurn("o");
-      } else {
-        setTurn("x");
-      }
-    });
+    if (turn === "x") {
+      setTurn("o");
+    } else if (turn === "o") {
+      setTurn("x");
+    }
+  };
+
+  const cellClickHandler = (cell, value) => {
+    const updatedValue = { cell: value };
+    setGameOutcome((gameOutcome) => ({ ...gameOutcome, ...updatedValue }));
   };
 
   return (
     <div className="App">
       {/* <NewGame /> */}
-      <Game turn={turn} />
+      <Game
+        turn={turn}
+        updatePlayerTurn={updatePlayerTurn}
+        gameOutcome={gameOutcome}
+        clickHandler={cellClickHandler}
+      />
       {/* <Modal winner="player 1" mark="o" msg={messages[1]} restart={false} /> */}
     </div>
   );
