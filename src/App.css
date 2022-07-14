@@ -214,10 +214,14 @@ form label {
 }
 
 .turn-icon {
-  background-image: url("./assets/icon-x-turn.svg");
+  /* background-image: url("./assets/icon-x-turn.svg"); */
   width: 16px;
   height: 16px;
   margin-bottom: 2px;
+}
+.turn-icon img {
+  width: 100%;
+  height: 100%;
 }
 
 .restart {

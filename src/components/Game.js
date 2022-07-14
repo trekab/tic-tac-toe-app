@@ -1,13 +1,17 @@
 import React from "react";
 import logo from "../assets/logo.svg";
+import xturn from "../assets/icon-x-turn.svg";
+import oturn from "../assets/icon-o-turn-alt.svg";
 
-const Game = () => {
+const Game = ({ turn }) => {
   return (
     <div className="game">
       <header className="game-header">
         <img src={logo} alt="logo" className="game-header__logo" />
         <div className="game-header__turn">
-          <div className="turn-icon"></div>
+          <div className="turn-icon">
+            <img src={turn === "x" ? xturn : oturn} alt="player turn" />
+          </div>
           <p>turn</p>
         </div>
         <button className="restart"></button>

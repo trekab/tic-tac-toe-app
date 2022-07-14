@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./App.css";
 import Game from "./components/Game";
 import Modal from "./components/Modal";
@@ -11,11 +12,23 @@ const App = () => {
     "you won!",
   ];
 
+  const [turn, setTurn] = useState("x");
+
+  const updatePlayerTurn = () => {
+    setTurn(() => {
+      if (turn === "x") {
+        setTurn("o");
+      } else {
+        setTurn("x");
+      }
+    });
+  };
+
   return (
     <div className="App">
       {/* <NewGame /> */}
-      <Game />
-      <Modal winner="player 1" mark="o" msg={messages[1]} restart={false} />
+      <Game turn={turn} />
+      {/* <Modal winner="player 1" mark="o" msg={messages[1]} restart={false} /> */}
     </div>
   );
 };
