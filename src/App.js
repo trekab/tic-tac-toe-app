@@ -42,14 +42,14 @@ const App = () => {
 
   return (
     <div className="App">
-      <NewGame />
-      {/* <Game
+      {/* <NewGame /> */}
+      <Game
         turn={turn}
         updatePlayerTurn={updatePlayerTurn}
         gameOutcome={gameOutcome}
         clickHandler={cellClickHandler}
-      /> */}
-      <Modal winner="player 1" mark="o" msg={messages[1]} restart={false} />
+      />
+      {/* <Modal winner="player 1" mark="o" msg={messages[1]} restart={false} /> */}
     </div>
   );
 };

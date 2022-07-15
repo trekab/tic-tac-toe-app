@@ -158,6 +158,7 @@
     line-height: 20.16px;
     letter-spacing: 1px;
     margin-right: 20px;
+    border-radius: 10px;
   }
 
   .turn-icon {
@@ -170,11 +171,13 @@
   .restart {
     width: 52px;
     height: 52px;
+    border-radius: 10px;
   }
 
   .game-grid__cell {
     width: 140px;
     height: 140px;
+    border-radius: 15px;
   }
 
   .x-mark,
@@ -185,6 +188,7 @@
   .game-footer__cell {
     width: 140px;
     height: 72px;
+    border-radius: 15px;
   }
 
   .p-result {
