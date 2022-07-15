@@ -22,7 +22,7 @@
   background-color: var(--navy-hover);
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
   margin-right: 30px;
   font-weight: 700;
   font-size: 14px;
@@ -32,10 +32,9 @@
 }
 
 .turn-icon {
-  /* background-image: url("./assets/icon-x-turn.svg"); */
   width: 16px;
   height: 16px;
-  margin-bottom: 2px;
+  margin-right: 9px;
 }
 .turn-icon img {
   width: 100%;
@@ -64,7 +63,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
-  margin-top: 19px;
+  margin-top: 64px;
 }
 
 .game-grid__cell {
@@ -151,6 +150,10 @@
     height: 623px;
   }
 
+  .game-grid {
+    margin-top: 19px;
+  }
+
   .game-header__turn {
     width: 140px;
     height: 52px;
@@ -164,8 +167,7 @@
   .turn-icon {
     width: 20px;
     height: 20px;
-    background-repeat: no-repeat;
-    background-size: 20px 20px;
+    margin-right: 13px;
   }
 
   .restart {
