@@ -16,6 +16,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  top: 50%;
+  transform: translate(0%, -50%);
 }
 
 .modal-info {
@@ -79,10 +81,18 @@
   box-shadow: inset 0px -4px 0px #7a898f;
 }
 
+.cancel:hover {
+  background-color: var(--silver-hover);
+}
+
 .approve {
   background-color: var(--yellow);
   color: var(--navy);
   box-shadow: inset 0px -4px 0px #af8027;
+}
+
+.approve:hover {
+  background-color: var(--yellow-hover);
 }
 
 .x-color {

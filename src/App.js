@@ -13,6 +13,8 @@ const App = () => {
   ];
 
   const [turn, setTurn] = useState("x");
+  const [displayModal, setDisplayModal] = useState(false);
+  const [winner, setWinner] = useState("");
   const [gameOutcome, setGameOutcome] = useState({
     cell1: "",
     cell2: "",
@@ -60,7 +62,8 @@ const App = () => {
         gameOutcome.cell5 === "x" &&
         gameOutcome.cell7 === "x")
     ) {
-      console.log("X wins!");
+      setDisplayModal(true);
+      setWinner("x");
     } else if (
       (gameOutcome.cell1 === "o" &&
         gameOutcome.cell2 === "o" &&
@@ -87,7 +90,8 @@ const App = () => {
         gameOutcome.cell5 === "o" &&
         gameOutcome.cell7 === "o")
     ) {
-      console.log("O wins");
+      setDisplayModal(true);
+      setWinner("o");
     } else if (
       gameOutcome.cell1 !== "" &&
       gameOutcome.cell2 !== "" &&
@@ -99,9 +103,9 @@ const App = () => {
       gameOutcome.cell8 !== "" &&
       gameOutcome.cell9 !== ""
     ) {
-      console.log("It's a TIE!");
+      setDisplayModal(true);
+      setWinner("tie");
     }
-    console.log("useEffect", gameOutcome);
   }, [gameOutcome]);
 
   const cellClickHandler = (cell, value) => {
@@ -120,7 +124,13 @@ const App = () => {
         gameOutcome={gameOutcome}
         cellClickHandler={cellClickHandler}
       />
-      {/* <Modal winner="player 1" mark="o" msg={messages[1]} restart={false} /> */}
+      <Modal
+        winner={winner}
+        mark={`${winner === "x" ? "x" : "o"}`}
+        msg={`${winner === "x" ? "player 1" : "player 2"} wins!`}
+        restart={false}
+        displayClass={displayModal ? "" : "d-none"}
+      />
     </div>
   );
 };
