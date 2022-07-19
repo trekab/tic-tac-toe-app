@@ -4,7 +4,7 @@ import xturn from "../assets/icon-x-turn.svg";
 import oturn from "../assets/icon-o-turn-alt.svg";
 import GameCell from "./GameCell";
 
-const Game = ({ turn, updatePlayerTurn, gameOutcome, clickHandler }) => {
+const Game = ({ turn, updatePlayerTurn, gameOutcome, cellClickHandler }) => {
   return (
     <div className="game">
       <header className="game-header">
@@ -22,7 +22,7 @@ const Game = ({ turn, updatePlayerTurn, gameOutcome, clickHandler }) => {
           <GameCell
             className={gameOutcome[result]}
             key={result}
-            clickHandler={clickHandler}
+            clickHandler={cellClickHandler}
             cell={result}
             turn={turn}
             updatePlayerTurn={updatePlayerTurn}

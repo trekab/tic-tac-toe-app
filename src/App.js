@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import Game from "./components/Game";
 import Modal from "./components/Modal";
@@ -12,7 +12,8 @@ const App = () => {
     "you won!",
   ];
 
-  const results = {
+  const [turn, setTurn] = useState("x");
+  const [gameOutcome, setGameOutcome] = useState({
     cell1: "",
     cell2: "",
     cell3: "",
@@ -22,10 +23,7 @@ const App = () => {
     cell7: "",
     cell8: "",
     cell9: "",
-  };
-
-  const [turn, setTurn] = useState("x");
-  const [gameOutcome, setGameOutcome] = useState(results);
+  });
 
   const updatePlayerTurn = () => {
     if (turn === "x") {
@@ -35,9 +33,82 @@ const App = () => {
     }
   };
 
+  useEffect(() => {
+    if (
+      (gameOutcome.cell1 === "x" &&
+        gameOutcome.cell2 === "x" &&
+        gameOutcome.cell3 === "x") ||
+      (gameOutcome.cell4 === "x" &&
+        gameOutcome.cell5 === "x" &&
+        gameOutcome.cell6 === "x") ||
+      (gameOutcome.cell7 === "x" &&
+        gameOutcome.cell8 === "x" &&
+        gameOutcome.cell9 === "x") ||
+      (gameOutcome.cell1 === "x" &&
+        gameOutcome.cell4 === "x" &&
+        gameOutcome.cell7 === "x") ||
+      (gameOutcome.cell2 === "x" &&
+        gameOutcome.cell5 === "x" &&
+        gameOutcome.cell8 === "x") ||
+      (gameOutcome.cell3 === "x" &&
+        gameOutcome.cell6 === "x" &&
+        gameOutcome.cell9 === "x") ||
+      (gameOutcome.cell1 === "x" &&
+        gameOutcome.cell5 === "x" &&
+        gameOutcome.cell9 === "x") ||
+      (gameOutcome.cell3 === "x" &&
+        gameOutcome.cell5 === "x" &&
+        gameOutcome.cell7 === "x")
+    ) {
+      console.log("X wins!");
+    } else if (
+      (gameOutcome.cell1 === "o" &&
+        gameOutcome.cell2 === "o" &&
+        gameOutcome.cell3 === "o") ||
+      (gameOutcome.cell4 === "o" &&
+        gameOutcome.cell5 === "o" &&
+        gameOutcome.cell6 === "o") ||
+      (gameOutcome.cell7 === "o" &&
+        gameOutcome.cell8 === "o" &&
+        gameOutcome.cell9 === "o") ||
+      (gameOutcome.cell1 === "o" &&
+        gameOutcome.cell4 === "o" &&
+        gameOutcome.cell7 === "o") ||
+      (gameOutcome.cell2 === "o" &&
+        gameOutcome.cell5 === "o" &&
+        gameOutcome.cell8 === "o") ||
+      (gameOutcome.cell3 === "o" &&
+        gameOutcome.cell6 === "o" &&
+        gameOutcome.cell9 === "o") ||
+      (gameOutcome.cell1 === "o" &&
+        gameOutcome.cell5 === "o" &&
+        gameOutcome.cell9 === "o") ||
+      (gameOutcome.cell3 === "o" &&
+        gameOutcome.cell5 === "o" &&
+        gameOutcome.cell7 === "o")
+    ) {
+      console.log("O wins");
+    } else if (
+      gameOutcome.cell1 !== "" &&
+      gameOutcome.cell2 !== "" &&
+      gameOutcome.cell3 !== "" &&
+      gameOutcome.cell4 !== "" &&
+      gameOutcome.cell5 !== "" &&
+      gameOutcome.cell6 !== "" &&
+      gameOutcome.cell7 !== "" &&
+      gameOutcome.cell8 !== "" &&
+      gameOutcome.cell9 !== ""
+    ) {
+      console.log("It's a TIE!");
+    }
+    console.log("useEffect", gameOutcome);
+  }, [gameOutcome]);
+
   const cellClickHandler = (cell, value) => {
-    const updatedValue = { cell: value };
-    setGameOutcome((gameOutcome) => ({ ...gameOutcome, ...updatedValue }));
+    const updatedResult = {};
+    updatedResult[cell] = value;
+    setGameOutcome((gameOutcome) => ({ ...gameOutcome, ...updatedResult }));
+    console.log(gameOutcome);
   };
 
   return (
@@ -47,7 +118,7 @@ const App = () => {
         turn={turn}
         updatePlayerTurn={updatePlayerTurn}
         gameOutcome={gameOutcome}
-        clickHandler={cellClickHandler}
+        cellClickHandler={cellClickHandler}
       />
       {/* <Modal winner="player 1" mark="o" msg={messages[1]} restart={false} /> */}
     </div>

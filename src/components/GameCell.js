@@ -1,6 +1,12 @@
 import React, { useState } from "react";
 
-const GameCell = ({ className, updatePlayerTurn, cell, turn }) => {
+const GameCell = ({
+  className,
+  updatePlayerTurn,
+  cell,
+  turn,
+  clickHandler,
+}) => {
   const [clicked, setClicked] = useState(false);
   const [cellMark, setCellMark] = useState(className);
 
@@ -8,11 +14,14 @@ const GameCell = ({ className, updatePlayerTurn, cell, turn }) => {
     if (!clicked) {
       if (turn === "x") {
         setCellMark("x-mark");
+        clickHandler(cell, "x");
       } else {
         setCellMark("o-mark");
+        clickHandler(cell, "o");
       }
       setClicked(true);
       updatePlayerTurn();
+      console.log(cell);
     }
   };
 
