@@ -1,0 +1,138 @@
+.overlay {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.39);
+  z-index: 1;
+}
+
+.modal {
+  position: absolute;
+  z-index: 2;
+  height: 228px;
+  background-color: var(--navy-hover);
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top: 50%;
+  transform: translate(0%, -50%);
+}
+
+.modal-info {
+  text-align: center;
+}
+
+.modal-p {
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--silver);
+  font-size: 14px;
+  line-height: 17.64px;
+  letter-spacing: 0.88px;
+}
+
+.round-tie {
+  font-weight: 700;
+  color: var(--silver);
+  text-transform: uppercase;
+  font-size: 24px;
+  line-height: 30.24px;
+  margin-top: -8px;
+  margin-bottom: 24px;
+  letter-spacing: 1.5px;
+}
+
+.modal-msg {
+  height: 30px;
+  color: var(--yellow);
+  text-transform: uppercase;
+  font-size: 24px;
+  line-height: 30.24px;
+  letter-spacing: 1.5px;
+  display: flex;
+  margin: 16px 0;
+}
+
+.modal-msg .p-icon {
+  width: 30px;
+  height: 30px;
+  margin: 0 8px;
+}
+
+.cancel,
+.approve {
+  margin: 8px;
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20.16px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.cancel {
+  background-color: var(--silver);
+  color: var(--navy);
+  box-shadow: inset 0px -4px 0px #7a898f;
+}
+
+.cancel:hover {
+  background-color: var(--silver-hover);
+}
+
+.approve {
+  background-color: var(--yellow);
+  color: var(--navy);
+  box-shadow: inset 0px -4px 0px #af8027;
+}
+
+.approve:hover {
+  background-color: var(--yellow-hover);
+}
+
+.x-color {
+  color: var(--blue);
+}
+
+.o-color {
+  color: var(--yellow);
+}
+
+@media (min-width: 576px) {
+  .modal {
+    height: 266px;
+  }
+
+  .modal-p {
+    font-size: 16px;
+    line-height: 20.16px;
+    letter-spacing: 1px;
+  }
+
+  .modal-msg {
+    font-size: 40px;
+    line-height: 50.4px;
+    letter-spacing: 2.5px;
+    display: flex;
+    align-items: center;
+    margin-top: 32px;
+    margin-bottom: 16px;
+  }
+
+  .modal-msg .p-icon {
+    width: 64px;
+    height: 64px;
+    margin-right: 24px;
+  }
+
+  .cancel,
+  .approve {
+    margin: 16px;
+    font-size: 16px;
+  }
+}

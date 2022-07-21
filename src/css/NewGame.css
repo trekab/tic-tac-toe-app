@@ -1,0 +1,170 @@
+.new-game {
+  text-align: center;
+}
+
+.logo {
+  height: 32px;
+}
+
+.mark-choice {
+  background-color: var(--navy-hover);
+  height: 205px;
+  width: 327px;
+  margin: 32px auto;
+  border-radius: 15px;
+  color: var(--silver-hover);
+  box-shadow: inset 0px -8px 0px #10212a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.mark-choice h1 {
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 20.16px;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.mark-choice form {
+  width: 279px;
+  height: 72px;
+  background-color: var(--navy);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mark-choice form div {
+  width: 132px;
+  height: 54px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: 8px solid var(--navy);
+}
+
+.mark-choice form div:hover {
+  background-color: rgba(168, 191, 201, 0.05);
+}
+
+#o-mark__section,
+#x-mark__section {
+  border-radius: 15px;
+}
+
+#x-mark__section label {
+  width: 32px;
+  height: 32px;
+  background-image: url("../assets/icon-x-turn.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 32px 32px;
+  cursor: pointer;
+}
+
+#o-mark__section {
+  background-color: var(--silver);
+}
+
+#o-mark__section label {
+  width: 32px;
+  height: 32px;
+  background-image: url("../assets/icon-o-turn.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 32px 32px;
+  cursor: pointer;
+}
+
+.mark-choice form input {
+  appearance: none;
+}
+
+.mark-choice form input:checked + label {
+  border: 3px double white;
+  border-radius: 25%;
+}
+
+#reminder {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0.88px;
+  color: var(--silver);
+  opacity: 0.5;
+}
+
+.buttons {
+  width: 327px;
+  height: 128px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.buttons button {
+  width: 100%;
+  height: 56px;
+  border-radius: 15px;
+  border: none;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20.16px;
+  letter-spacing: 1px;
+  color: var(--navy);
+  cursor: pointer;
+}
+
+.buttons button:first-child {
+  background-color: var(--yellow);
+  box-shadow: inset 0px -8px 0px #cc8b13;
+}
+
+.buttons button:first-child:hover {
+  background-color: var(--yellow-hover);
+}
+
+.buttons button:last-child {
+  background-color: var(--blue);
+  box-shadow: inset 0px -8px 0px #118c87;
+}
+
+.buttons button:last-child:hover {
+  background-color: var(--blue-hover);
+}
+
+form label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.outline {
+  width: 32px;
+  background-color: var(--navy);
+}
+
+@media (min-width: 576px) {
+  .mark-choice,
+  .buttons {
+    width: 460px;
+  }
+
+  .mark-choice h1 {
+    font-size: 16px;
+  }
+
+  .mark-choice form {
+    width: 412px;
+  }
+
+  .mark-choice form div {
+    width: 198px;
+  }
+}
