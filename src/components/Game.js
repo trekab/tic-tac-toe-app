@@ -4,7 +4,16 @@ import xturn from "../assets/icon-x-turn.svg";
 import oturn from "../assets/icon-o-turn-alt.svg";
 import GameCell from "./GameCell";
 
-const Game = ({ turn, updatePlayerTurn, gameOutcome, cellClickHandler, restartButtonHandler }) => {
+const Game = ({
+  turn,
+  updatePlayerTurn,
+  gameOutcome,
+  cellClickHandler,
+  restartButtonHandler,
+  xWins,
+  oWins,
+  ties,
+}) => {
   return (
     <div className="game">
       <header className="game-header">
@@ -20,10 +29,11 @@ const Game = ({ turn, updatePlayerTurn, gameOutcome, cellClickHandler, restartBu
       <main className="game-grid">
         {Object.keys(gameOutcome).map((result) => (
           <GameCell
-            className={gameOutcome[result]}
+            className={gameOutcome[result].value}
             key={result}
             clickHandler={cellClickHandler}
-            cell={result}
+            cell={gameOutcome[result]}
+            cellName={result}
             turn={turn}
             updatePlayerTurn={updatePlayerTurn}
           />
@@ -31,16 +41,16 @@ const Game = ({ turn, updatePlayerTurn, gameOutcome, cellClickHandler, restartBu
       </main>
       <footer className="game-footer">
         <div className="game-footer__cell p1">
-          <p className="p-result">x (you)</p>
-          <p className="p-result__value">14</p>
+          <p className="p-result">x (p1)</p>
+          <p className="p-result__value">{xWins}</p>
         </div>
         <div className="game-footer__cell ties">
           <p className="p-result">ties</p>
-          <p className="p-result__value">32</p>
+          <p className="p-result__value">{ties}</p>
         </div>
         <div className="game-footer__cell p2">
-          <p className="p-result">o (cpu)</p>
-          <p className="p-result__value">11</p>
+          <p className="p-result">o (p2)</p>
+          <p className="p-result__value">{oWins}</p>
         </div>
       </footer>
     </div>

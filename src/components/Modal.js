@@ -2,7 +2,14 @@ import React, { useEffect, useState } from "react";
 import iconO from "../assets/icon-o.svg";
 import iconX from "../assets/icon-x.svg";
 
-const Modal = ({ winner, mark, msg, restart, displayClass }) => {
+const Modal = ({
+  winner,
+  mark,
+  msg,
+  restart,
+  displayClass,
+  nextRoundHandler,
+}) => {
   const [winnerMark, setWinnerMark] = useState("");
   useEffect(() => {
     if (mark === "o") {
@@ -35,7 +42,7 @@ const Modal = ({ winner, mark, msg, restart, displayClass }) => {
             <button className="cancel">
               {restart ? "No, cancel" : "Quit"}
             </button>
-            <button className="approve">
+            <button className="approve" onClick={nextRoundHandler}>
               {restart ? "Yes, restart" : "Next Round"}
             </button>
           </div>

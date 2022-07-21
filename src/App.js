@@ -12,21 +12,26 @@ const App = () => {
   //   "you won!",
   // ];
 
+  const initialGrid = {
+    cell1: { value: "", clicked: false },
+    cell2: { value: "", clicked: false },
+    cell3: { value: "", clicked: false },
+    cell4: { value: "", clicked: false },
+    cell5: { value: "", clicked: false },
+    cell6: { value: "", clicked: false },
+    cell7: { value: "", clicked: false },
+    cell8: { value: "", clicked: false },
+    cell9: { value: "", clicked: false },
+  };
+
   const [turn, setTurn] = useState("x");
   const [displayModal, setDisplayModal] = useState(false);
   const [restart, setRestart] = useState(false);
   const [winner, setWinner] = useState("");
-  const [gameOutcome, setGameOutcome] = useState({
-    cell1: "",
-    cell2: "",
-    cell3: "",
-    cell4: "",
-    cell5: "",
-    cell6: "",
-    cell7: "",
-    cell8: "",
-    cell9: "",
-  });
+  const [xWins, setXwins] = useState(0);
+  const [oWins, setOwins] = useState(0);
+  const [ties, setTies] = useState(0);
+  const [gameOutcome, setGameOutcome] = useState(initialGrid);
 
   const updatePlayerTurn = () => {
     if (turn === "x") {
@@ -38,86 +43,96 @@ const App = () => {
 
   useEffect(() => {
     if (
-      (gameOutcome.cell1 === "x" &&
-        gameOutcome.cell2 === "x" &&
-        gameOutcome.cell3 === "x") ||
-      (gameOutcome.cell4 === "x" &&
-        gameOutcome.cell5 === "x" &&
-        gameOutcome.cell6 === "x") ||
-      (gameOutcome.cell7 === "x" &&
-        gameOutcome.cell8 === "x" &&
-        gameOutcome.cell9 === "x") ||
-      (gameOutcome.cell1 === "x" &&
-        gameOutcome.cell4 === "x" &&
-        gameOutcome.cell7 === "x") ||
-      (gameOutcome.cell2 === "x" &&
-        gameOutcome.cell5 === "x" &&
-        gameOutcome.cell8 === "x") ||
-      (gameOutcome.cell3 === "x" &&
-        gameOutcome.cell6 === "x" &&
-        gameOutcome.cell9 === "x") ||
-      (gameOutcome.cell1 === "x" &&
-        gameOutcome.cell5 === "x" &&
-        gameOutcome.cell9 === "x") ||
-      (gameOutcome.cell3 === "x" &&
-        gameOutcome.cell5 === "x" &&
-        gameOutcome.cell7 === "x")
+      (gameOutcome.cell1.value === "x" &&
+        gameOutcome.cell2.value === "x" &&
+        gameOutcome.cell3.value === "x") ||
+      (gameOutcome.cell4.value === "x" &&
+        gameOutcome.cell5.value === "x" &&
+        gameOutcome.cell6.value === "x") ||
+      (gameOutcome.cell7.value === "x" &&
+        gameOutcome.cell8.value === "x" &&
+        gameOutcome.cell9.value === "x") ||
+      (gameOutcome.cell1.value === "x" &&
+        gameOutcome.cell4.value === "x" &&
+        gameOutcome.cell7.value === "x") ||
+      (gameOutcome.cell2.value === "x" &&
+        gameOutcome.cell5.value === "x" &&
+        gameOutcome.cell8.value === "x") ||
+      (gameOutcome.cell3.value === "x" &&
+        gameOutcome.cell6.value === "x" &&
+        gameOutcome.cell9.value === "x") ||
+      (gameOutcome.cell1.value === "x" &&
+        gameOutcome.cell5.value === "x" &&
+        gameOutcome.cell9.value === "x") ||
+      (gameOutcome.cell3.value === "x" &&
+        gameOutcome.cell5.value === "x" &&
+        gameOutcome.cell7.value === "x")
     ) {
       setDisplayModal(true);
       setWinner("x");
+      setXwins((value) => value + 1);
     } else if (
-      (gameOutcome.cell1 === "o" &&
-        gameOutcome.cell2 === "o" &&
-        gameOutcome.cell3 === "o") ||
-      (gameOutcome.cell4 === "o" &&
-        gameOutcome.cell5 === "o" &&
-        gameOutcome.cell6 === "o") ||
-      (gameOutcome.cell7 === "o" &&
-        gameOutcome.cell8 === "o" &&
-        gameOutcome.cell9 === "o") ||
-      (gameOutcome.cell1 === "o" &&
-        gameOutcome.cell4 === "o" &&
-        gameOutcome.cell7 === "o") ||
-      (gameOutcome.cell2 === "o" &&
-        gameOutcome.cell5 === "o" &&
-        gameOutcome.cell8 === "o") ||
-      (gameOutcome.cell3 === "o" &&
-        gameOutcome.cell6 === "o" &&
-        gameOutcome.cell9 === "o") ||
-      (gameOutcome.cell1 === "o" &&
-        gameOutcome.cell5 === "o" &&
-        gameOutcome.cell9 === "o") ||
-      (gameOutcome.cell3 === "o" &&
-        gameOutcome.cell5 === "o" &&
-        gameOutcome.cell7 === "o")
+      (gameOutcome.cell1.value === "o" &&
+        gameOutcome.cell2.value === "o" &&
+        gameOutcome.cell3.value === "o") ||
+      (gameOutcome.cell4.value === "o" &&
+        gameOutcome.cell5.value === "o" &&
+        gameOutcome.cell6.value === "o") ||
+      (gameOutcome.cell7.value === "o" &&
+        gameOutcome.cell8.value === "o" &&
+        gameOutcome.cell9.value === "o") ||
+      (gameOutcome.cell1.value === "o" &&
+        gameOutcome.cell4.value === "o" &&
+        gameOutcome.cell7.value === "o") ||
+      (gameOutcome.cell2.value === "o" &&
+        gameOutcome.cell5.value === "o" &&
+        gameOutcome.cell8.value === "o") ||
+      (gameOutcome.cell3.value === "o" &&
+        gameOutcome.cell6.value === "o" &&
+        gameOutcome.cell9.value === "o") ||
+      (gameOutcome.cell1.value === "o" &&
+        gameOutcome.cell5.value === "o" &&
+        gameOutcome.cell9.value === "o") ||
+      (gameOutcome.cell3.value === "o" &&
+        gameOutcome.cell5.value === "o" &&
+        gameOutcome.cell7.value === "o")
     ) {
       setDisplayModal(true);
       setWinner("o");
+      setOwins((value) => value + 1);
     } else if (
-      gameOutcome.cell1 !== "" &&
-      gameOutcome.cell2 !== "" &&
-      gameOutcome.cell3 !== "" &&
-      gameOutcome.cell4 !== "" &&
-      gameOutcome.cell5 !== "" &&
-      gameOutcome.cell6 !== "" &&
-      gameOutcome.cell7 !== "" &&
-      gameOutcome.cell8 !== "" &&
-      gameOutcome.cell9 !== ""
+      gameOutcome.cell1.value !== "" &&
+      gameOutcome.cell2.value !== "" &&
+      gameOutcome.cell3.value !== "" &&
+      gameOutcome.cell4.value !== "" &&
+      gameOutcome.cell5.value !== "" &&
+      gameOutcome.cell6.value !== "" &&
+      gameOutcome.cell7.value !== "" &&
+      gameOutcome.cell8.value !== "" &&
+      gameOutcome.cell9.value !== ""
     ) {
       setDisplayModal(true);
       setWinner("tie");
+      setTies((value) => value + 1);
     }
   }, [gameOutcome]);
 
-  const cellClickHandler = (cell, value) => {
+  const cellClickHandler = (cell, value, clicked) => {
     const updatedResult = {};
-    updatedResult[cell] = value;
+    updatedResult[cell] = { value, clicked };
     setGameOutcome((gameOutcome) => ({ ...gameOutcome, ...updatedResult }));
   };
 
   const restartButtonHandler = () => {
-    setDisplayModal(true);
     setRestart(true);
+    setDisplayModal(true);
+  };
+
+  const nextRoundBtnHandler = () => {
+    setDisplayModal(false);
+    setTurn("x");
+    setGameOutcome((gameOutcome) => ({ ...gameOutcome, ...initialGrid }));
+    setRestart(false);
   };
 
   return (
@@ -129,6 +144,9 @@ const App = () => {
         gameOutcome={gameOutcome}
         cellClickHandler={cellClickHandler}
         restartButtonHandler={restartButtonHandler}
+        xWins={xWins}
+        oWins={oWins}
+        ties={ties}
       />
       <Modal
         winner={winner}
@@ -136,6 +154,7 @@ const App = () => {
         msg={`${winner === "x" ? "player 1" : "player 2"} wins!`}
         restart={restart}
         displayClass={displayModal ? "" : "d-none"}
+        nextRoundHandler={nextRoundBtnHandler}
       />
     </div>
   );

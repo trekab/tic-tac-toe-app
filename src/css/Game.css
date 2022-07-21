@@ -76,26 +76,26 @@
   cursor: pointer;
 }
 
-.x-mark {
+.x {
   background-image: url("../assets/icon-x.svg");
 }
 
-.x-mark,
-.o-mark {
+.x,
+.o {
   background-repeat: no-repeat;
   background-position: center;
   background-size: 40px 40px;
 }
 
-.x-mark:hover {
+.x:hover {
   background-image: url("../assets/icon-x-outline.svg");
 }
 
-.o-mark {
+.o {
   background-image: url("../assets/icon-o.svg");
 }
 
-.o-mark:hover {
+.o:hover {
   background-image: url("../assets/icon-o-outline.svg");
 }
 
@@ -193,8 +193,8 @@
     border-radius: 15px;
   }
 
-  .x-mark,
-  .o-mark {
+  .x,
+  .o {
     background-size: 63.46px 63.46px;
   }
 
