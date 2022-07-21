@@ -27,12 +27,13 @@ const App = () => {
   const [turn, setTurn] = useState("x");
   const [displayModal, setDisplayModal] = useState(false);
   const [restart, setRestart] = useState(false);
-  const [winner, setWinner] = useState("");
+  const [winner, setWinner] = useState({ mark: "", name: "" });
   const [xWins, setXwins] = useState(0);
   const [oWins, setOwins] = useState(0);
   const [ties, setTies] = useState(0);
   const [gameOutcome, setGameOutcome] = useState(initialGrid);
   const [newGame, setNewGame] = useState(true);
+  const [playerOne, setPlayerOne] = useState("x");
 
   const updatePlayerTurn = () => {
     if (turn === "x") {
@@ -70,7 +71,10 @@ const App = () => {
         gameOutcome.cell7.value === "x")
     ) {
       setDisplayModal(true);
-      setWinner("x");
+      setWinner({
+        mark: "x",
+        name: `${playerOne === "x" ? "player 1" : "player 2"}`,
+      });
       setXwins((value) => value + 1);
     } else if (
       (gameOutcome.cell1.value === "o" &&
@@ -99,7 +103,10 @@ const App = () => {
         gameOutcome.cell7.value === "o")
     ) {
       setDisplayModal(true);
-      setWinner("o");
+      setWinner({
+        mark: "o",
+        name: `${playerOne === "x" ? "player 2" : "player 1"}`,
+      });
       setOwins((value) => value + 1);
     } else if (
       gameOutcome.cell1.value !== "" &&
@@ -113,10 +120,13 @@ const App = () => {
       gameOutcome.cell9.value !== ""
     ) {
       setDisplayModal(true);
-      setWinner("tie");
+      setWinner({
+        mark: "tie",
+        name: "",
+      });
       setTies((value) => value + 1);
     }
-  }, [gameOutcome]);
+  }, [gameOutcome, playerOne]);
 
   const cellClickHandler = (cell, value, clicked) => {
     const updatedResult = {};
@@ -161,6 +171,7 @@ const App = () => {
       <NewGame
         className={newGame ? "" : "d-none"}
         newGameButtonHandler={newGameButtonHandler}
+        playerOneChoice={setPlayerOne}
       />
       <Game
         turn={turn}
@@ -172,11 +183,12 @@ const App = () => {
         oWins={oWins}
         ties={ties}
         className={newGame ? "d-none" : ""}
+        playerOne={playerOne}
       />
       <Modal
-        winner={winner}
-        mark={`${winner === "x" ? "x" : "o"}`}
-        msg={`${winner === "x" ? "player 1" : "player 2"} wins!`}
+        winner={winner.mark}
+        mark={`${winner.mark === "x" ? "x" : "o"}`}
+        msg={`${winner.name} wins!`}
         restart={restart}
         displayClass={displayModal ? "" : "d-none"}
         nextRoundHandler={nextRoundBtnHandler}
