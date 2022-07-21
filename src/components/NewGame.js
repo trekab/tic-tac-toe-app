@@ -1,9 +1,9 @@
 import React from "react";
 import logo from "../assets/logo.svg";
 
-const NewGame = () => {
+const NewGame = ({ className, newGameButtonHandler }) => {
   return (
-    <div className="new-game">
+    <div className={`new-game ${className}`}>
       <img src={logo} alt="logo" className="logo" />
       <div className="mark-choice">
         <h1>PICK PLAYER 1'S MARK</h1>
@@ -21,7 +21,7 @@ const NewGame = () => {
       </div>
       <div className="buttons">
         <button>NEW GAME (VS CPU)</button>
-        <button>NEW GAME (VS PLAYER)</button>
+        <button onClick={newGameButtonHandler}>NEW GAME (VS PLAYER)</button>
       </div>
     </div>
   );

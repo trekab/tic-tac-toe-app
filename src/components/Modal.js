@@ -9,6 +9,8 @@ const Modal = ({
   restart,
   displayClass,
   nextRoundHandler,
+  gameRestartHandler,
+  cancelGameRestart,
 }) => {
   const [winnerMark, setWinnerMark] = useState("");
   useEffect(() => {
@@ -39,10 +41,16 @@ const Modal = ({
           )}
 
           <div className="modal-buttons">
-            <button className="cancel">
+            <button
+              className="cancel"
+              onClick={restart ? cancelGameRestart : gameRestartHandler}
+            >
               {restart ? "No, cancel" : "Quit"}
             </button>
-            <button className="approve" onClick={nextRoundHandler}>
+            <button
+              className="approve"
+              onClick={restart ? gameRestartHandler : nextRoundHandler}
+            >
               {restart ? "Yes, restart" : "Next Round"}
             </button>
           </div>

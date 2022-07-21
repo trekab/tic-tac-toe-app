@@ -13,9 +13,10 @@ const Game = ({
   xWins,
   oWins,
   ties,
+  className,
 }) => {
   return (
-    <div className="game">
+    <div className={`game ${className}`}>
       <header className="game-header">
         <img src={logo} alt="logo" className="game-header__logo" />
         <div className="game-header__turn">

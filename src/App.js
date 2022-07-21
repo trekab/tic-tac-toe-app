@@ -32,6 +32,7 @@ const App = () => {
   const [oWins, setOwins] = useState(0);
   const [ties, setTies] = useState(0);
   const [gameOutcome, setGameOutcome] = useState(initialGrid);
+  const [newGame, setNewGame] = useState(false);
 
   const updatePlayerTurn = () => {
     if (turn === "x") {
@@ -135,9 +136,32 @@ const App = () => {
     setRestart(false);
   };
 
+  const gameRestartHandler = () => {
+    setNewGame(true);
+    setDisplayModal(false);
+  };
+
+  const newGameButtonHandler = () => {
+    setNewGame(false);
+    setRestart(false);
+    setOwins(0);
+    setXwins(0);
+    setTies(0);
+    setTurn("x");
+    setGameOutcome((gameOutcome) => ({ ...gameOutcome, ...initialGrid }));
+  };
+
+  const cancelGameRestart = () => {
+    setDisplayModal(false);
+    setRestart(false);
+  };
+
   return (
     <div className="App">
-      {/* <NewGame /> */}
+      <NewGame
+        className={newGame ? "" : "d-none"}
+        newGameButtonHandler={newGameButtonHandler}
+      />
       <Game
         turn={turn}
         updatePlayerTurn={updatePlayerTurn}
@@ -147,6 +171,7 @@ const App = () => {
         xWins={xWins}
         oWins={oWins}
         ties={ties}
+        className={newGame ? "d-none" : ""}
       />
       <Modal
         winner={winner}
@@ -155,6 +180,8 @@ const App = () => {
         restart={restart}
         displayClass={displayModal ? "" : "d-none"}
         nextRoundHandler={nextRoundBtnHandler}
+        gameRestartHandler={gameRestartHandler}
+        cancelGameRestart={cancelGameRestart}
       />
     </div>
   );
