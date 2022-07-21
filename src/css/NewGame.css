@@ -58,8 +58,8 @@
 }
 
 #x-mark__section label {
-  width: 32px;
-  height: 32px;
+  width: 100%;
+  height: 100%;
   background-image: url("../assets/icon-x-turn.svg");
   background-repeat: no-repeat;
   background-position: center;
@@ -67,14 +67,10 @@
   cursor: pointer;
 }
 
-#o-mark__section {
-  background-color: var(--silver);
-}
-
 #o-mark__section label {
-  width: 32px;
-  height: 32px;
-  background-image: url("../assets/icon-o-turn.svg");
+  width: 100%;
+  height: 100%;
+  background-image: url("../assets/icon-o-turn-alt.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 32px 32px;
@@ -85,9 +81,16 @@
   appearance: none;
 }
 
-.mark-choice form input:checked + label {
-  border: 3px double white;
-  border-radius: 25%;
+#x-mark__section input:checked + label {
+  background-image: url("../assets/icon-x-navy.svg");
+  background-color: var(--silver);
+  border-radius: 10px;
+}
+
+#o-mark__section input:checked + label {
+  background-image: url("../assets/icon-o-navy.svg");
+  background-color: var(--silver);
+  border-radius: 10px;
 }
 
 #reminder {
