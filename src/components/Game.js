@@ -14,6 +14,7 @@ const Game = ({
   oWins,
   ties,
   className,
+  playerOne,
 }) => {
   return (
     <div className={`game ${className}`}>
@@ -42,7 +43,9 @@ const Game = ({
       </main>
       <footer className="game-footer">
         <div className="game-footer__cell p1">
-          <p className="p-result">x (p1)</p>
+          <p className="p-result">
+            x {`${playerOne === "x" ? "(p1)" : "(p2)"}`}
+          </p>
           <p className="p-result__value">{xWins}</p>
         </div>
         <div className="game-footer__cell ties">
@@ -50,7 +53,9 @@ const Game = ({
           <p className="p-result__value">{ties}</p>
         </div>
         <div className="game-footer__cell p2">
-          <p className="p-result">o (p2)</p>
+          <p className="p-result">
+            o {`${playerOne === "x" ? "(p2)" : "(p1)"}`}
+          </p>
           <p className="p-result__value">{oWins}</p>
         </div>
       </footer>
