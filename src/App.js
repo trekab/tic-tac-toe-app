@@ -33,7 +33,7 @@ const App = () => {
   const [ties, setTies] = useState(0);
   const [gameOutcome, setGameOutcome] = useState(initialGrid);
   const [newGame, setNewGame] = useState(true);
-  const [playerOne, setPlayerOne] = useState("o");
+  const [playerOne, setPlayerOne] = useState("x");
 
   const updatePlayerTurn = () => {
     if (turn === "x") {
@@ -120,7 +120,10 @@ const App = () => {
       gameOutcome.cell9.value !== ""
     ) {
       setDisplayModal(true);
-      setWinner("tie");
+      setWinner({
+        mark: "tie",
+        name: "",
+      });
       setTies((value) => value + 1);
     }
   }, [gameOutcome, playerOne]);
@@ -168,6 +171,7 @@ const App = () => {
       <NewGame
         className={newGame ? "" : "d-none"}
         newGameButtonHandler={newGameButtonHandler}
+        playerOneChoice={setPlayerOne}
       />
       <Game
         turn={turn}
