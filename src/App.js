@@ -14,6 +14,7 @@ const App = () => {
 
   const [turn, setTurn] = useState("x");
   const [displayModal, setDisplayModal] = useState(false);
+  const [restart, setRestart] = useState(false);
   const [winner, setWinner] = useState("");
   const [gameOutcome, setGameOutcome] = useState({
     cell1: "",
@@ -112,7 +113,11 @@ const App = () => {
     const updatedResult = {};
     updatedResult[cell] = value;
     setGameOutcome((gameOutcome) => ({ ...gameOutcome, ...updatedResult }));
-    console.log(gameOutcome);
+  };
+
+  const restartButtonHandler = () => {
+    setDisplayModal(true);
+    setRestart(true);
   };
 
   return (
@@ -123,12 +128,13 @@ const App = () => {
         updatePlayerTurn={updatePlayerTurn}
         gameOutcome={gameOutcome}
         cellClickHandler={cellClickHandler}
+        restartButtonHandler={restartButtonHandler}
       />
       <Modal
         winner={winner}
         mark={`${winner === "x" ? "x" : "o"}`}
         msg={`${winner === "x" ? "player 1" : "player 2"} wins!`}
-        restart={false}
+        restart={restart}
         displayClass={displayModal ? "" : "d-none"}
       />
     </div>

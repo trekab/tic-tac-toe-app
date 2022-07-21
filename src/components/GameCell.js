@@ -21,7 +21,6 @@ const GameCell = ({
       }
       setClicked(true);
       updatePlayerTurn();
-      console.log(cell);
     }
   };
 

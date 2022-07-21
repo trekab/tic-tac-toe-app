@@ -4,7 +4,7 @@ import xturn from "../assets/icon-x-turn.svg";
 import oturn from "../assets/icon-o-turn-alt.svg";
 import GameCell from "./GameCell";
 
-const Game = ({ turn, updatePlayerTurn, gameOutcome, cellClickHandler }) => {
+const Game = ({ turn, updatePlayerTurn, gameOutcome, cellClickHandler, restartButtonHandler }) => {
   return (
     <div className="game">
       <header className="game-header">
@@ -15,7 +15,7 @@ const Game = ({ turn, updatePlayerTurn, gameOutcome, cellClickHandler }) => {
           </div>
           <p>turn</p>
         </div>
-        <button className="restart"></button>
+        <button className="restart" onClick={restartButtonHandler}></button>
       </header>
       <main className="game-grid">
         {Object.keys(gameOutcome).map((result) => (
