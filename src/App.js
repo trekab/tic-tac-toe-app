@@ -33,7 +33,7 @@ const App = () => {
   const [ties, setTies] = useState(0);
   const [gameOutcome, setGameOutcome] = useState(initialGrid);
   const [newGame, setNewGame] = useState(true);
-  const [playerOne, setPlayerOne] = useState("x");
+  const [playerOne, setPlayerOne] = useState("o");
 
   const updatePlayerTurn = () => {
     if (turn === "x") {
