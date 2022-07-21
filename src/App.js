@@ -126,7 +126,7 @@ const App = () => {
       });
       setTies((value) => value + 1);
     }
-  }, [gameOutcome, playerOne]);
+  }, [gameOutcome]);
 
   const cellClickHandler = (cell, value, clicked) => {
     const updatedResult = {};
