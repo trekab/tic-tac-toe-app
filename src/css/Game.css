@@ -99,6 +99,16 @@
   background-image: url("../assets/icon-o-outline.svg");
 }
 
+.x-mark__winner {
+  background-image: url("../assets/icon-x-navy.svg");
+  background-color: var(--blue);
+}
+
+.o-mark__winner {
+  background-image: url("../assets/icon-o-navy.svg");
+  background-color: var(--yellow);
+}
+
 .game-footer {
   display: flex;
   justify-content: space-between;

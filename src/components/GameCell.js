@@ -28,6 +28,7 @@ const GameCell = ({
     <div
       className={`game-grid__cell ${cellMark}`}
       onClick={cellClickHandler}
+      id={cell}
     ></div>
   );
 };

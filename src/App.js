@@ -5,12 +5,12 @@ import Modal from "./components/Modal";
 import NewGame from "./components/NewGame";
 
 const App = () => {
-  const messages = [
-    "oh no, you lost...",
-    "player 1 wins!",
-    "player 2 wins!",
-    "you won!",
-  ];
+  // const messages = [
+  //   "oh no, you lost...",
+  //   "player 1 wins!",
+  //   "player 2 wins!",
+  //   "you won!",
+  // ];
 
   const [turn, setTurn] = useState("x");
   const [displayModal, setDisplayModal] = useState(false);
