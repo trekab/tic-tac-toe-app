@@ -25,7 +25,7 @@ const App = () => {
   const [oWins, setOwins] = useState(0);
   const [ties, setTies] = useState(0);
   const [gameOutcome, setGameOutcome] = useState(initialGrid);
-  const [newGame, setNewGame] = useState(true);
+  const [newGame, setNewGame] = useState(false);
   const [playerOne, setPlayerOne] = useState("o");
 
   const updatePlayerTurn = () => {
