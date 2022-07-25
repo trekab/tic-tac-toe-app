@@ -126,6 +126,7 @@ const App = () => {
       });
       setTies((value) => value + 1);
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [gameOutcome]);
 
   const cellClickHandler = (cell, value, clicked) => {
