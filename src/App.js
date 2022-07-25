@@ -126,8 +126,15 @@ const App = () => {
       });
       setTies((value) => value + 1);
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [gameOutcome]);
+
+  const resetGame = () => {
+    setOwins(0);
+    setXwins(0);
+    setTies(0);
+    setTurn("x");
+  };
 
   const cellClickHandler = (cell, value, clicked) => {
     const updatedResult = {};
@@ -155,10 +162,7 @@ const App = () => {
   const newGameButtonHandler = () => {
     setNewGame(false);
     setRestart(false);
-    setOwins(0);
-    setXwins(0);
-    setTies(0);
-    setTurn("x");
+    resetGame();
     setGameOutcome((gameOutcome) => ({ ...gameOutcome, ...initialGrid }));
   };
 
