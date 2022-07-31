@@ -102,11 +102,13 @@
 .x-mark__winner {
   background-image: url("../assets/icon-x-navy.svg");
   background-color: var(--blue);
+  box-shadow: inset 0px -8px 0px #118c87;
 }
 
 .o-mark__winner {
   background-image: url("../assets/icon-o-navy.svg");
   background-color: var(--yellow);
+  box-shadow: inset 0px -8px 0px #af8027;
 }
 
 .game-footer {
