@@ -15,6 +15,8 @@ const Game = ({
   ties,
   className,
   playerOne,
+  winningCells,
+  winner,
 }) => {
   const gameCells = Object.keys(gameOutcome).map((result) => (
     <GameCell
@@ -25,6 +27,8 @@ const Game = ({
       cellName={result}
       turn={turn}
       updatePlayerTurn={updatePlayerTurn}
+      winningCells={winningCells}
+      winner={winner}
     />
   ));
   return (

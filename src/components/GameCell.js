@@ -7,6 +7,8 @@ const GameCell = ({
   turn,
   clickHandler,
   cellName,
+  winningCells,
+  winner
 }) => {
   const cellClickHandler = () => {
     if (!cell.clicked) {
@@ -22,7 +24,7 @@ const GameCell = ({
 
   return (
     <div
-      className={`game-grid__cell ${className}`}
+      className={`game-grid__cell ${className} ${winningCells.includes(cellName) ? `${winner}-mark__winner`: ""}`}
       onClick={cellClickHandler}
     ></div>
   );
