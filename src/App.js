@@ -36,182 +36,129 @@ const App = () => {
     }
   };
 
+  const displayWinnerX = () => {
+    setDisplayModal(true);
+    setWinner({
+      mark: "x",
+      name: `${playerOne === "x" ? "player 1" : "player 2"}`,
+    });
+    setXwins((value) => value + 1);
+  };
+
+  const displayWinnerO = () => {
+    setDisplayModal(true);
+    setWinner({
+      mark: "o",
+      name: `${playerOne === "x" ? "player 2" : "player 1"}`,
+    });
+    setOwins((value) => value + 1);
+  };
+
+  const displayTie = () => {
+    setDisplayModal(true);
+    setWinner({
+      mark: "tie",
+      name: "",
+    });
+    setTies((value) => value + 1);
+  };
+
   const gameLogic = () => {
     switch (true) {
       case gameOutcome.cell1.value === "x" &&
         gameOutcome.cell2.value === "x" &&
         gameOutcome.cell3.value === "x":
-        setDisplayModal(true);
-        setWinner({
-          mark: "x",
-          name: `${playerOne === "x" ? "player 1" : "player 2"}`,
-        });
-        setXwins((value) => value + 1);
+        displayWinnerX();
         break;
 
       case gameOutcome.cell4.value === "x" &&
         gameOutcome.cell5.value === "x" &&
         gameOutcome.cell6.value === "x":
-        setDisplayModal(true);
-        setWinner({
-          mark: "x",
-          name: `${playerOne === "x" ? "player 1" : "player 2"}`,
-        });
-        setXwins((value) => value + 1);
+        displayWinnerX();
         break;
 
       case gameOutcome.cell7.value === "x" &&
         gameOutcome.cell8.value === "x" &&
         gameOutcome.cell9.value === "x":
-        setDisplayModal(true);
-        setWinner({
-          mark: "x",
-          name: `${playerOne === "x" ? "player 1" : "player 2"}`,
-        });
-        setXwins((value) => value + 1);
+        displayWinnerX();
         break;
 
       case gameOutcome.cell1.value === "x" &&
         gameOutcome.cell4.value === "x" &&
         gameOutcome.cell7.value === "x":
-        setDisplayModal(true);
-        setWinner({
-          mark: "x",
-          name: `${playerOne === "x" ? "player 1" : "player 2"}`,
-        });
-        setXwins((value) => value + 1);
+        displayWinnerX();
         break;
 
       case gameOutcome.cell2.value === "x" &&
         gameOutcome.cell5.value === "x" &&
         gameOutcome.cell8.value === "x":
-        setDisplayModal(true);
-        setWinner({
-          mark: "x",
-          name: `${playerOne === "x" ? "player 1" : "player 2"}`,
-        });
-        setXwins((value) => value + 1);
+        displayWinnerX();
         break;
 
       case gameOutcome.cell3.value === "x" &&
         gameOutcome.cell6.value === "x" &&
         gameOutcome.cell9.value === "x":
-        setDisplayModal(true);
-        setWinner({
-          mark: "x",
-          name: `${playerOne === "x" ? "player 1" : "player 2"}`,
-        });
-        setXwins((value) => value + 1);
+        displayWinnerX();
         break;
 
       case gameOutcome.cell1.value === "x" &&
         gameOutcome.cell5.value === "x" &&
         gameOutcome.cell9.value === "x":
-        setDisplayModal(true);
-        setWinner({
-          mark: "x",
-          name: `${playerOne === "x" ? "player 1" : "player 2"}`,
-        });
-        setXwins((value) => value + 1);
+        displayWinnerX();
         break;
 
       case gameOutcome.cell3.value === "x" &&
         gameOutcome.cell5.value === "x" &&
         gameOutcome.cell7.value === "x":
-        setDisplayModal(true);
-        setWinner({
-          mark: "x",
-          name: `${playerOne === "x" ? "player 1" : "player 2"}`,
-        });
-        setXwins((value) => value + 1);
+        displayWinnerX();
         break;
 
       case gameOutcome.cell1.value === "o" &&
         gameOutcome.cell2.value === "o" &&
         gameOutcome.cell3.value === "o":
-        setDisplayModal(true);
-        setWinner({
-          mark: "o",
-          name: `${playerOne === "x" ? "player 2" : "player 1"}`,
-        });
-        setOwins((value) => value + 1);
+        displayWinnerO();
         break;
 
       case gameOutcome.cell4.value === "o" &&
         gameOutcome.cell5.value === "o" &&
         gameOutcome.cell6.value === "o":
-        setDisplayModal(true);
-        setWinner({
-          mark: "o",
-          name: `${playerOne === "x" ? "player 2" : "player 1"}`,
-        });
-        setOwins((value) => value + 1);
+        displayWinnerO();
         break;
 
       case gameOutcome.cell7.value === "o" &&
         gameOutcome.cell8.value === "o" &&
         gameOutcome.cell9.value === "o":
-        setDisplayModal(true);
-        setWinner({
-          mark: "o",
-          name: `${playerOne === "x" ? "player 2" : "player 1"}`,
-        });
-        setOwins((value) => value + 1);
+        displayWinnerO();
         break;
 
       case gameOutcome.cell1.value === "o" &&
         gameOutcome.cell4.value === "o" &&
         gameOutcome.cell7.value === "o":
-        setDisplayModal(true);
-        setWinner({
-          mark: "o",
-          name: `${playerOne === "x" ? "player 2" : "player 1"}`,
-        });
-        setOwins((value) => value + 1);
+        displayWinnerO();
         break;
 
       case gameOutcome.cell2.value === "o" &&
         gameOutcome.cell5.value === "o" &&
         gameOutcome.cell8.value === "o":
-        setDisplayModal(true);
-        setWinner({
-          mark: "o",
-          name: `${playerOne === "x" ? "player 2" : "player 1"}`,
-        });
-        setOwins((value) => value + 1);
+        displayWinnerO();
         break;
 
       case gameOutcome.cell3.value === "o" &&
         gameOutcome.cell6.value === "o" &&
         gameOutcome.cell9.value === "o":
-        setDisplayModal(true);
-        setWinner({
-          mark: "o",
-          name: `${playerOne === "x" ? "player 2" : "player 1"}`,
-        });
-        setOwins((value) => value + 1);
+        displayWinnerO();
         break;
 
       case gameOutcome.cell1.value === "o" &&
         gameOutcome.cell5.value === "o" &&
         gameOutcome.cell9.value === "o":
-        setDisplayModal(true);
-        setWinner({
-          mark: "o",
-          name: `${playerOne === "x" ? "player 2" : "player 1"}`,
-        });
-        setOwins((value) => value + 1);
+        displayWinnerO();
         break;
 
       case gameOutcome.cell3.value === "o" &&
         gameOutcome.cell5.value === "o" &&
         gameOutcome.cell7.value === "o":
-        setDisplayModal(true);
-        setWinner({
-          mark: "o",
-          name: `${playerOne === "x" ? "player 2" : "player 1"}`,
-        });
-        setOwins((value) => value + 1);
+        displayWinnerO();
         break;
 
       case gameOutcome.cell1.value !== "" &&
@@ -223,12 +170,7 @@ const App = () => {
         gameOutcome.cell7.value !== "" &&
         gameOutcome.cell8.value !== "" &&
         gameOutcome.cell9.value !== "":
-        setDisplayModal(true);
-        setWinner({
-          mark: "tie",
-          name: "",
-        });
-        setTies((value) => value + 1);
+        displayTie();
         break;
 
       default:
