@@ -16,6 +16,17 @@ const Game = ({
   className,
   playerOne,
 }) => {
+  const gameCells = Object.keys(gameOutcome).map((result) => (
+    <GameCell
+      className={gameOutcome[result].value}
+      key={result}
+      clickHandler={cellClickHandler}
+      cell={gameOutcome[result]}
+      cellName={result}
+      turn={turn}
+      updatePlayerTurn={updatePlayerTurn}
+    />
+  ));
   return (
     <div className={`game ${className}`}>
       <header className="game-header">
@@ -28,19 +39,7 @@ const Game = ({
         </div>
         <button className="restart" onClick={restartButtonHandler}></button>
       </header>
-      <main className="game-grid">
-        {Object.keys(gameOutcome).map((result) => (
-          <GameCell
-            className={gameOutcome[result].value}
-            key={result}
-            clickHandler={cellClickHandler}
-            cell={gameOutcome[result]}
-            cellName={result}
-            turn={turn}
-            updatePlayerTurn={updatePlayerTurn}
-          />
-        ))}
-      </main>
+      <main className="game-grid">{gameCells}</main>
       <footer className="game-footer">
         <div className="game-footer__cell p1">
           <p className="p-result">
