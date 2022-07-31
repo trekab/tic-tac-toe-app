@@ -36,7 +36,7 @@ const App = () => {
     }
   };
 
-  useEffect(() => {
+  const gameLogic = () => {
     if (
       (gameOutcome.cell1.value === "x" &&
         gameOutcome.cell2.value === "x" &&
@@ -119,6 +119,10 @@ const App = () => {
       });
       setTies((value) => value + 1);
     }
+  };
+
+  useEffect(() => {
+    gameLogic();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [gameOutcome]);
 
