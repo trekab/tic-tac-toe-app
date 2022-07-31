@@ -18,6 +18,7 @@ const NewGame = ({ className, newGameButtonHandler, playerOneChoice }) => {
               name="mark"
               value="x"
               onChange={(e) => checkMarkHandler(e)}
+              defaultChecked
             />
             <label htmlFor="x"></label>
           </div>
@@ -28,7 +29,6 @@ const NewGame = ({ className, newGameButtonHandler, playerOneChoice }) => {
               name="mark"
               value="o"
               onChange={(e) => checkMarkHandler(e)}
-              defaultChecked
             />
             <label htmlFor="o"></label>
           </div>
