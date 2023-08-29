@@ -43,6 +43,13 @@ Users should be able to:
 - Mobile-first workflow
 - [React](https://reactjs.org/) - JS library
 
+### Running the app locally
+- Clone the repository
+- `cd` into the repository
+- Build the docker image: `docker build -t tic-tac-toe .`
+- Run the app: `docker run -p 3000:3000 tic-tac-toe`
+- Open the app at `http://localhost:3000/` in your browser
+
 ## Author
 
 - Website - [Treasure Kabareebe](https://trekab.io/)
